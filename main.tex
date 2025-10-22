@@ -1,0 +1,305 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{mathtools}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+
+\title{\vspace{-1em}Round--Trip Fairness (RTF):\\
+A Routing Law for Honest Exchange Under Guards\\[0.25em]
+}
+\author{Jacob Alexander Elliott\\
+Abzu Research\\
+\texttt{ip@abzu.qa}\\
+ORCID: 0009-0002-6534-8262}
+\date{Draft of \today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+\textbf{Blink.} Sequence is a resource; translation is a quotient; blur is the price of execution. A message, act, or artifact is \emph{round--trip fair} when the shortest lawful corridor out equals, to posted tolerance, the corridor back under the same guards. We measure corridors in Murphy ticks $L_c=\lceil\log(1/c)/I(\theta)\rceil$, with $I$ the rate from the standard tilt $\Lambda(t)=\log\rho(\mathrm{diag}(e^{tf})P)$, so fairness becomes a symmetry of horizons at fixed tail risk $c$.
+
+\smallskip
+\textbf{Steelman.} RTF is an execution law, not etiquette. We pin the guard stack (portability by ratio and rate; bounded audit residual; low obstruction; thermostatted blur $\beta$), wire kill--switches (order symmetry, counterfeit portability, gluing failure), and prove that when the canonical alternating GLUE/RG path (the intercalation path) exists, RTF selects it among admissible corridors preserving the invariant class. We package a detector, a one--page Round--Trip Card, and application playbooks for conversation, policy, moderation, summarization, code$\leftrightarrow$apparatus, markets, training, and ownership. The invariant debt from violating RTF is visible as asymmetric horizons at posted guards.\\[-0.5em]
+\end{abstract}
+
+\tableofcontents
+
+\section{Flag (Blink)}
+Fairness is a geometric equality: guarded forward and reverse corridors trace comparable Murphy horizons. If the out--leg is cheap only in the direction flattering itself, the claim is unfair and the badge flips. RTF inherits canonicality from the alternating GLUE/RG route (Intercalation) and exposes theater as detour cost. We route on receipts, not parables.
+
+\section{Objects, Lenses, and Witnesses}
+\subsection{Two lenses, one object}
+We maintain two faithful charts so the law does not depend on an aesthetic.
+
+\paragraph{Discrete (policy graph) lens.}
+Let $P$ be a quotient flow (row--stochastic kernel) with task tilt $f$. For lawful operators $F$ (condition/selection) and $G$ (glue/consolidation) compare orders $FG$ vs.\ $GF$. Witnesses of directional asymmetry:
+\begin{itemize}[leftmargin=1.25em]
+\item \emph{Edge--uniques}: reachable edges in $FG$ absent in $GF$;
+\item \emph{Holonomy}: minimal directed cycles attained only in one order;
+\item \emph{Commutator energy}: $K=\|[F,G]\|_F$.
+\end{itemize}
+
+\paragraph{Smooth (field) lens.}
+On $\Omega\subset\mathbb{R}^n$ with update field $u$ and Jacobian $J=\nabla u$, decompose $J=S+A$ with $A=\frac12(J-J^\top)$. Rotation planes (principal bivectors of $-A^2$) witness order--born tiers. Forward/back paths integrate along admissible geodesics under the QFI metric; cost is a Murphy horizon symmetry.
+
+\paragraph{Equivalence (up to floors).}
+Sampling with blur fixed at $\beta^\star$ implies quantitative correspondence: nonzero $A$ with at least one active plane $\Rightarrow$ discrete reachability asymmetry above floors (and conversely under refinement). Floors and $\beta^\star$ are published.
+
+\section{Guards, Meters, Blur}\label{sec:meters}
+\paragraph{Portability (QPID gate).}
+Translation preserves \emph{ratio} $\delta_\rho=\big|\log(V_{\text{meta}}/V_{\text{native}})\big|$ and \emph{rate} gap $\Delta I=\sup_\theta\big|I_{\text{meta}}(\theta)-I_{\text{native}}(\theta)\big|$ under admissible idiom projections. Accuracy without rate is counterfeit.
+
+\paragraph{Murphy clock.}
+Given rate $I(\theta)$ at tilt $\theta$ and risk $c\in(0,1)$, the schedulable horizon is
+\[
+L_c=\left\lceil\frac{\log(1/c)}{I(\theta)}\right\rceil,\quad\text{ticks } \Delta L_c=\pm 1.
+\]
+Fair round trips have $|L_c^{\rightarrow}-L_c^{\leftarrow}|\le\tau_{\text{RTF}}$ at posted $c,\theta$.
+
+\paragraph{Audit, obstruction, blur.}
+Unit residuals $\eta$ and obstruction mass $\mathrm{Ob}$ must lie below floors on the overlaps certifying the corridor. Blur $\beta$ is the thermostatted halo (price of execution). We publish minimal $\beta^\star$ where controls are dark and witnesses persist (CUP). Claims at $\beta<\beta^\star$ are aliasing; at $\beta\gg\beta^\star$ are washout.
+
+\section{Definition (Round--Trip Fairness)}
+Fix seeds, guards $\Gamma=(\tau_\rho,\tau_I,\epsilon_a,\epsilon_o,\beta^\star)$, tail $c$, and a corridor class $\mathcal{C}$ of admissible paths between roles $A\!\to\!B$ (policy$\to$critique, speaker$\to$listener, code$\to$apparatus, proof$\to$program).
+
+\medskip
+\noindent\textbf{Forward} $C_{A\to B}\in\mathcal{C}$ minimizes $L_c$ subject to $\Gamma$.\quad
+\textbf{Return} $C_{B\to A}$ minimizes $L_c$ with the \emph{same} $\Gamma$ and idiom family.
+
+\begin{quote}
+\textbf{RTF.} $(A,B)$ is \emph{fair} at $(c,\Gamma)$ if
+\[
+\big|\,L_c(C_{A\to B})-L_c(C_{B\to A})\,\big|\le \tau_{\text{RTF}}
+\quad\text{and}\quad
+(\delta_\rho,\Delta I,\eta,\mathrm{Ob},\beta)\ \text{pass }\Gamma.
+\]
+Otherwise it is \emph{unfair}.
+\end{quote}
+
+\noindent RTF is \emph{agent--first}: evaluate in participants' idioms then check portability. If a translation shortens the return only for itself (ratio passes, rate fails), it is counterfeit.
+
+\section{Canonicality via Intercalation}
+Between faithful coarse grainings preserving invariant class $I$, there exists a unique (up to refinement) alternating GLUE/RG path of minimal residual---the \emph{intercalation path} $P^\star$.
+
+\begin{theorem}[RTF selects the canonical path]\label{thm:canonical}
+Among admissible corridors preserving $I$, $P^\star$ minimizes the average round--trip horizon
+\[
+\frac{1}{2}\big(L_c(C_{A\to B})+L_c(C_{B\to A})\big),
+\]
+and any detour raises round--trip asymmetry by at least the residual gap.
+\end{theorem}
+
+\noindent\emph{Sketch.} Submodularity of residual accumulation along alternating steps and gap--damping imply deviations increase gluing or scale residuals, which raise $I(\theta)$ mismatches that lengthen at least one leg. RTF's symmetric objective attains its minimum at $P^\star$.
+
+\section{Triune Commutation (meaning--code--matter)}
+On the admissible subcategory of idioms with idiomatic univalence, if an invariant $I$ survives translation, gluing, and renormalization under $T\dashv C$, then meaning$\leftrightarrow$code$\leftrightarrow$matter commute up to gap--damped error. The \emph{Renderability Lemma} bounds the extra Murphy ticks to realize a fair statement along the other legs: a round--trip fair proof compiles to code and apparatus at bounded cost.
+
+\section{Badge and Kill--Switches}
+\subsection*{Badge fields}
+\emph{ratio \ \ rate \ \ audit \ \ obstruction \ \ blur \ \ RTF}
+
+\subsection*{Kill--switches (flip to fail)}
+\begin{enumerate}[leftmargin=1.4em]
+\item \textbf{Order symmetry.} If forward and reverse show the same witnesses under $\Gamma,\beta^\star$, the claim is not about fairness but free commutation.
+\item \textbf{Rate failure (ratio preserved).} Accuracy passes while rate fails under admissible projection $\Rightarrow$ counterfeit corridor.
+\item \textbf{Gluing obstruction.} If overlaps certifying the corridor do not glue cheaply, withdraw the claim.
+\end{enumerate}
+
+\section{Protocol: How to Run and Report}
+\textbf{P0 (Print the guard card).} Post $(\tau_\rho,\tau_I,\epsilon_a,\epsilon_o,\beta^\star)$, tail $c$, tick tolerance $\tau_{\text{RTF}}$.
+
+\textbf{P1 (Strict adjacency, then Eden).} Compute $FG$ vs.\ $GF$ witnesses at threshold $0$, then at a tiny Eden threshold; signals only at Eden are normalization artifacts---stop.
+
+\textbf{P2 (Blur ladder).} Sweep to $\beta^\star$ with controls dark and witnesses alive.
+
+\textbf{P3 (Corridors).} On the guarded $P$, find $C_{A\to B},C_{B\to A}$ minimizing $L_c$; report rates, ticks, and detour hotspots relative to intercalation.
+
+\textbf{P4 (QPID check).} Verify the portability pair across idioms (ratio \& rate) and publish equality windows.
+
+\textbf{P5 (Stop smart).} Use confidence--based stopping: stop when the incumbent corridor is best with anytime--valid confidence $\tau$.
+
+\textbf{P6 (Publish the receipt sheaf).} Ship a one--page Round--Trip Card: guards, $\beta^\star$, witnesses (both lenses), corridors with ticks, hotspots, kill--switch status.
+
+\section{Consequences and Playbooks}
+\subsection{Conversation \& stitch--trading}
+Civility becomes measurable: kindness that keeps receipts shortens the clock symmetrically. Cheap charisma fails tick symmetry and appears as detours or rate failures.
+
+\subsection{Ownership and bequest}
+Ownership is lawful continuity under action. The \emph{Ownership Round--Trip} is simply RTF applied to the Ownership Card fields and corridors: claim, compose, bequeath only along paths you'd accept in reverse.
+
+\subsection{Summarization, captioning, translation}
+Accuracy without rate is counterfeit. Fair summaries and captions \emph{necessarily} preserve the ridge where both legs shorten $L_c$ under guards; equality windows of FI--contraction reveal shared kinds.
+
+\subsection{Moderation and policy boundaries}
+Rules that shorten their own outbound while lengthening inbound critique accrue invariant debt. Adopt only rules whose round--trip tick gap is within $\tau_{\text{RTF}}$ across idioms; stop exploration at the kink with confidence $\tau$.
+
+\subsection{Design, markets, governance}
+Fair institutions equalize round--trip horizons for symmetric claims under posted guards. Predatory designs export curvature debt (longer horizons for others). RTF is the audit surface.
+
+\section{Naming thresholds for norms}
+Admit a new fairness word only at salience ridges where the round--trip gap closes and both legs' $L_c$ drop for the same budget; otherwise the lexicon refuses to route.
+
+\section{Falsifiers (pre--registered)}
+\begin{enumerate}[leftmargin=1.3em]
+\item \textbf{Persistent asymmetry under guards.} Forward/back ticks differ by more than $\tau_{\text{RTF}}$ while the QPID pair passes and obstruction is small $\Rightarrow$ RTF fails \emph{there}.
+\item \textbf{Counterfeit portability.} Accuracy preserved yet rate fails on admissible projection $\Rightarrow$ void.
+\item \textbf{Obstruction on overlaps.} If sheaf gluing fails on the corridor overlaps, geometry refuses to assemble $\Rightarrow$ withdraw.
+\end{enumerate}
+
+\section{Methods (Part I): Minimal Runbook}
+\subsection{Guard thresholds \& floors}
+Canonical defaults: $\tau_\rho\in[0.01,0.05]$, $\tau_I\in[0.01,0.03]$, $\epsilon_a\in[10^{-4},10^{-3}]$, $\epsilon_o\in[10^{-3},10^{-2}]$, Eden threshold $10^{-3}$, floors on edge--uniques/holonomy/curl set by $q_{95}$ of controls, $\tau_{\text{RTF}}\in\{1,2\}$ ticks. The blur ladder declares $\beta^\star$ by CUP.
+
+\subsection{Corridor search}
+On $P$ with tilt $f$, compute $\Lambda(t)=\log\rho(\mathrm{diag}(e^{tf})P)$, the Legendre dual $I$, and $L_c$. Enumerate admissible factorizations of $F$ and $G$ preserving $I$; score forward/back corridors by ticks; select the symmetric minimizer (Theorem~\ref{thm:canonical}).
+
+\subsection{Publishing grammar}
+Every claim ships: guard card, $\beta^\star$, witnesses (both charts), forward/back ticks with hotspots vs.\ intercalation, QPID pair (ratio/rate) including equality windows, kill--switch status, and an adoption--kink note (CBS). The one--page card doubles as audit and manual.
+
+\bigskip
+\section*{Part II --- Instruments, Empirics, Applications (Extended)}
+This half turns the badge into operations: a meter, a detector, canonical exemplars, failure modes, design patterns, and an empirical program.
+
+\subsection*{11.\quad The guard stack (fixed in advance)}
+\textbf{Portability pair.} Compute ratio gap $\delta_{\rho}$ and rate gap $\Delta I$ from $\Lambda$ and $I$. Accuracy without rate $\Rightarrow$ counterfeit.
+
+\textbf{Audit \& obstruction.} Require $\eta\le\epsilon_a$, $\mathrm{Ob}\le\epsilon_o$ on the overlaps that certify the corridor.
+
+\textbf{Blur.} Thermostat to $\beta^\star$ (controls dark, witnesses persist). Publish the ladder and the point controls go dark.
+
+\textbf{Slack.} Publish $S=(s_{\rho}, s_I, s_a, s_o)$; only score where $S>0$.
+
+\subsection*{12.\quad The RTF meter}
+Given idioms $A\to B$ and translators $T_{A\to B},T_{B\to A}$ passing QPID, tail $c$, tilt $\theta$:
+
+\begin{align*}
+L^{\rightarrow}_c(A\rightsquigarrow B)&:=\min\{L:\text{guarded critic in $B$ verifies $A$'s meaning to $\varepsilon$ in $L$ steps}\},\\
+L^{\leftarrow}_c(B\rightsquigarrow A)&:=\min\{L:\text{guarded author in $A$ verifies critic's meaning to $\varepsilon$ in $L$ steps}\},\\
+\Delta L_c&:=L^{\rightarrow}_c-L^{\leftarrow}_c,\qquad
+\mathrm{RTF}:=1-\frac{|\Delta L_c|}{L^{\rightarrow}_c+L^{\leftarrow}_c}.
+\end{align*}
+Fair: $|\Delta L_c|\le\tau$; advantaged: $\Delta L_c<-\tau$; opportunistic: $\Delta L_c>\tau$.
+
+\subsection*{13.\quad The detector (one page, receipts)}
+\textbf{Inputs.} Message/model output $m$, critic task $C$, translators $T$, risk $c$, guards, blur ladder.
+
+\textbf{Procedure.} (i) Pin seeds, guards, $\beta$ ladder; measure $L^{\rightarrow}_c,L^{\leftarrow}_c$ at strict adjacency and at Eden. (ii) Sweep $\beta$ to $\beta^\star$. (iii) Report $(L^{\rightarrow}_c,L^{\leftarrow}_c)$ at $\beta^\star$, $\Delta L_c$, $\mathrm{RTF}$, guard card. (iv) Flip kill--switches automatically (rate fail with ratio preserved; obstruction; order symmetry).
+
+\textbf{Outputs.} The \emph{Round--Trip Card}: two numbers (out/back), asymmetry, score, guard card, blur receipt.
+
+\subsection*{14.\quad Canonical exemplars (same meter, different idioms)}
+\textbf{Debate turns.} Short out / long back exposes rhetoric that cannot pay its own postage.
+
+\textbf{Summarization.} Accuracy passes but rate fails $\Rightarrow$ counterfeit summary. Fair summaries preserve the source's salience ridge on return.
+
+\textbf{Captioning.} Caption is fair iff it covers the structural center and the return (image$\leftarrow$caption) pays equal clock.
+
+\textbf{Policy boundaries.} A fair boundary equalizes appeal$\leftrightarrow$author corridors; asymmetric horizons expose exported delay.
+
+\textbf{Contracts.} Clauses must survive the translation--compression--quotient identity; ornamental flourishes that lengthen only one leg are unfair.
+
+\subsection*{15.\quad Octaves, knees, and naming}
+Sweep multiplicative knob $\kappa$ (context, detail, time budget). Gain $G(\kappa)=O(\kappa)/S(\kappa)$ has a single ridge $\kappa^\star$ where marginal curl gain equals marginal guard cost (log--axis). New names enter only on ridges that shorten $L_c$.
+
+\subsection*{16.\quad Failure modes (fail loudly)}
+\textbf{Counterfeit compression.} Accuracy passes, rate fails $\Rightarrow$ badge flips.
+
+\textbf{Translator collusion.} Shortens only one leg; symmetry check fails if not also shortening the inverse.
+
+\textbf{Gluing theater.} Locals won't glue on the overlaps; sheaf prints the hole.
+
+\textbf{Blur drift.} Per--example blur tuning to dress the corridor; QC locks $\beta^\star$ up front.
+
+\subsection*{17.\quad Design patterns that raise RTF}
+\textbf{Speak in invariants.} Cut prose that can’t pay return fare.
+
+\textbf{Pin the center.} Route both legs through the same hinge.
+
+\textbf{Close the triangle.} meaning$\leftrightarrow$code$\leftrightarrow$apparatus commutes on invariants.
+
+\textbf{Thermostat blur.} Fix $\beta^\star$; no bespoke warmth.
+
+\textbf{Budget the corridor.} Print the return path in the message itself.
+
+\subsection*{18.\quad Empirical program (minimal)}
+\textbf{Bench 1: Debate halves.} Measure $(L^{\rightarrow}_c,L^{\leftarrow}_c)$ at $\beta^\star$; heavy--tailed asymmetry with a tight fair band.
+
+\textbf{Bench 2: News$\to$summary$\to$news.} Fair abstracts show equality windows and symmetric clocks.
+
+\textbf{Bench 3: Image$\to$caption$\to$image.} Captions that bury the center inflate return horizons.
+
+\textbf{Bench 4: Boundary appeals.} Fair boundary: author tolerates user's corridor in reverse.
+
+\textbf{Bench 5: Code review.} Asymmetry localizes debt in the review loop.
+
+Artifact: the \emph{Round--Trip Atlas}: two numbers and a receipt per item.
+
+\subsection*{19.\quad Multi--agent covers, fairness at scale}
+Covers $\{U_i\}$ of idioms; overlaps carry admissible projections.
+
+\textbf{Cohomology of grievance.} Stable, high--confidence disagreement with red gluing is a first cohomology obstruction, not hypocrisy.
+
+\textbf{Vocative kernels.} Minimal overlap kernels achieving FI--equality define eloquence across worlds.
+
+\subsection*{20.\quad Ethics (geometry of regard)}
+Regard is curvature and clock you spend on others' paths. Institutions are \emph{fair} when symmetric claims traverse symmetric corridors under the same guards; \emph{predatory} when they shrink their own clock by lengthening everyone else's. RTF makes this a measurement.
+
+\subsection*{21.\quad Implementation notes (so it compiles)}
+Publish tolerances $(\tau_{\rho},\tau_I,\varepsilon_a,\varepsilon_o)$, floors, blur ladder with control chart proving $\beta^\star$. Shutter is centered; vector until final; captions and cards render from metadata. Confidence--based stopping governs search loops.
+
+\subsection*{22.\quad Proof sketches and invariants}
+\textbf{(A) Corridor monotonicity.} Under admissible compilers and fixed guards, $L_c$ contracts under composition of fair translators; $\mathrm{RTF}$ is nonincreasing along chains. Unfairness does not vanish by adding intermediates.
+
+\textbf{(B) Equality windows and shared kinds.} If an idiom projection achieves FI--equality on a subspace, categories supported there are shared; round--trip clocks equalize automatically.
+
+\textbf{(C) Blur minimality.} There exists $\beta^\star$ with controls dark and witnesses persistent. At $\beta^\star$ the derivative of witness--amplitude w.r.t.\ $\beta$ changes sign while control--slope crosses zero from above.
+
+\subsection*{23.\quad Protocol card (print this last page)}
+\textbf{Item.} \emph{Identifier, date, seeds.}\quad
+\textbf{Guards.} $(\tau_{\rho},\tau_I,\varepsilon_a,\varepsilon_o)$; $\beta$ ladder$\to\beta^\star$; slack $S$.\\
+\textbf{Outbound.} $L^{\rightarrow}_c$ (risk $c$, tilt $\theta$), QC receipt.\quad
+\textbf{Return.} $L^{\leftarrow}_c$ (same $c,\theta$), QC receipt.\\
+\textbf{Score.} $\Delta L_c$, $\mathrm{RTF}$, pass/fail.\quad
+\textbf{Kill--switches.} Rate fail? Glue fail? Symmetry cheat? (checkboxes).\\
+\textbf{Notes.} Ontological center witness; translator notes; early--stopping kink.
+
+\subsection*{24.\quad Conclusion (compressed)}
+RTF asks one operational question with a stopwatch: does the path you take out cost what you would accept back, under the same rules, at the same risk? If yes, proceed. If no, print the asymmetry and fix your route. Sequence is a resource; fairness is symmetry of the clock; receipts are the proof. The rest is weather.
+
+\bigskip
+
+\noindent\emph{Slogans worth remembering.} Route what you can return. Pin the center. Publish the clock. Thermostat the blur. Glue before applause.
+
+\appendix
+\section*{Appendix A: Notation and Floors}
+\begin{itemize}[leftmargin=1.2em]
+\item $\Lambda(t)=\log\rho(\mathrm{diag}(e^{tf})P)$; $I(\theta)=\sup_t\{t\theta-\Lambda(t)\}$; $L_c=\lceil\log(1/c)/I(\theta)\rceil$.
+\item Portability pair: $(\delta_\rho,\Delta I)$; audit $\eta$; obstruction $\mathrm{Ob}$; blur $\beta$ with $\beta^\star$.
+\item Floors: minimal detectables for edge--uniques, holonomy, $\|A\|_F$, and a one--tick local band in $L_c$.
+\end{itemize}
+
+\section*{Appendix B: Scalarizations and Scores}
+We use a $z$--scored mixture for witness scalarization:
+\[
+O=\alpha\,\widetilde{\|A\|}_F+\beta\,\widetilde{K}+\gamma\,\widetilde{\text{EU}}+\delta\,\widetilde{\text{Hol}},
+\quad \alpha+\beta+\gamma+\delta=1,
+\]
+default $(\alpha,\beta,\gamma,\delta)=(0.4,0.2,0.2,0.2)$. Slack $S$ aggregates component slacks with frozen weights; normalized gain $G=O/S$.
+
+\section*{Appendix C: Optional Derivations}
+\paragraph{Minimum--of--routes approximation.} For guarded alternatives with independent exponential proxies, the minimum route horizon adds rates; detours reduce active hazard and lengthen at least one leg, tightening Theorem~\ref{thm:canonical}.
+
+\paragraph{Confidence--based stopping (CBS).} Maintain an anytime--valid confidence process that the incumbent corridor is $\varepsilon$--optimal; stop at threshold $\tau$, preserving target misidentification risk under optional stopping.
+
+\end{document}
